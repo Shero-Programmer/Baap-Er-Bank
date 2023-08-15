@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inside the Bank</title>
+    <!-- Tailwind CDN Link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="text-4xl text-center font-medium mt-6">
+        Let's Play with
+        <span class="font-extrabold text-blue-700">Money!!</span>
+      </h1>
+    </header>
+    <main>
+      <!-- Update Section -->
+      <section>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-9/12 mx-auto mt-16">
+          <div class="bg-green-500 p-10 text-2xl rounded">
+            <h4 class="text-2xl font-bold">Deposit Amount</h4>
+            <h2 class="text-4xl">$00</h2>
+          </div>
+          <div class="bg-red-400 p-10 text-2xl rounded">
+            <h4 class="text-2xl font-bold">Withdraw</h4>
+            <h2 class="text-4xl">$00</h2>
+          </div>
+          <div class="bg-orange-400 p-10 text-2xl rounded">
+            <h4 class="text-2xl font-bold">Balance</h4>
+            <h2 class="text-4xl">$00</h2>
+          </div>
+        </div>
+      </section>
+      <!-- Deposit & Withdraw Section -->
+      <section>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-9/12 mx-auto mt-16">
+          <div class="bg-cyan-300 p-10 rounded">
+            <h4 class="text-2xl font-bold">Please Deposit Amount</h4>
+            <input
+              id="user-email"
+              class="w-10/12 block mt-4 mb-4 p-2 rounded"
+              type="email"
+              placeholder="$"
+            />
+            <button
+              id="btn-submit"
+              class="bg-pink-400 text-white font-medium px-8 py-2 rounded hover:bg-blue-300 hover:text-black"
+            >
+              Deposit Now
+            </button>
+          </div>
+          <div class="bg-fuchsia-300 p-10 rounded">
+            <h4 class="text-2xl font-bold">Please Withdraw Amount</h4>
+            <input
+              id="user-email"
+              class="w-10/12 block mt-4 mb-4 p-2 rounded"
+              type="email"
+              placeholder="$"
+            />
+            <button
+              id="btn-submit"
+              class="bg-blue-900 text-white font-medium px-8 py-2 rounded hover:bg-blue-300 hover:text-black"
+            >
+              Withdraw Now
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
