@@ -5,13 +5,20 @@ document.getElementById('btn-deposit').addEventListener('click', function () {
   const inputField = document.getElementById('deposit-amount');
 
   // Step: 03   To get the vale of an input field use .value
-  const depositAmount = inputField.value;
+  const newDepositAmountString = inputField.value;
+  const newDepositAmount = parseFloat(newDepositAmountString);
 
   // Step: 04 Put the value of deposited amount in the deposit section
 
   // For non-input element (input or textarea) use .innerText to get the value
 
   const deposit = document.getElementById('total-deposit');
-  const depositTotal = deposit.innerText;
-  deposit.innerText = depositAmount;
+  const previousDepositTotalString = deposit.innerText;
+  const previousDepositTotal = parseFloat(previousDepositTotalString);
+  const totalDeposit = previousDepositTotal + newDepositAmount;
+  deposit.innerText = totalDeposit;
+
+  //   Clear Input amount
+
+  inputField.value = '';
 });
