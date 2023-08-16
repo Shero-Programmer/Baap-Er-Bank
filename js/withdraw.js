@@ -6,6 +6,14 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
   const withdrawField = document.getElementById('withdraw-amount');
   const newWithdrawAmountString = withdrawField.value;
   const newWithdrawAmount = parseFloat(newWithdrawAmountString);
+  // Step: 07  Clear Input amount
+
+  withdrawField.value = '';
+
+  if (isNaN(newWithdrawAmount)) {
+    alert('Please provide a valid number');
+    return;
+  }
 
   // Step: 03 Put the value of withdrawn amount in the withdraw section
 
@@ -13,17 +21,20 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
   const previousTotalWithdrawString = withdraw.innerText;
   const previousTotalWithdraw = parseFloat(previousTotalWithdrawString);
 
-  //    Step: 04 Add the numbers to set the total withdraw
-
-  const totalWithdraw = newWithdrawAmount + previousTotalWithdraw;
-  withdraw.innerText = totalWithdraw;
-
   // Step: 05 Get the previous current balance
 
   const previousBalance = document.getElementById('current-balance');
   const previousBalanceTotalString = previousBalance.innerText;
   const previousBalanceTotal = parseFloat(previousBalanceTotalString);
 
+  if (newWithdrawAmount > previousBalanceTotal) {
+    alert('You do not enough money in your account');
+    return;
+  }
+  //    Step: 04 Add the numbers to set the total withdraw
+
+  const totalWithdraw = newWithdrawAmount + previousTotalWithdraw;
+  withdraw.innerText = totalWithdraw;
   //  Step: 06  Calculate New Total balance
 
   const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
@@ -31,8 +42,4 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
   //   Step: 08  Set the value in the new total balance
 
   previousBalance.innerText = newBalanceTotal;
-
-  // Step: 07  Clear Input amount
-
-  withdrawField.value = '';
 });
